@@ -1,0 +1,37 @@
+{% load custom_filters %}
+
+<div id="{{ movie.movie_id }}">
+  <div class="rating pointer">
+    <form class="rate-form" action="" method="POST">
+        {% csrf_token %}
+        {% if user.user_rating2.all|user_star:movie >= 1 %}
+            <span type="submit" class="fa fa-star fa-2x checked star-btn"></span>
+        {% else %}
+            <span type="submit" class="fa fa-star fa-2x star-btn"></span>
+        {% endif %}
+        {% if user.user_rating2.all|user_star:movie >= 2 %}
+            <span type="submit" class="fa fa-star fa-2x checked star-btn"></span>
+        {% else %}
+            <span type="submit" class="fa fa-star fa-2x star-btn"></span>
+        {% endif %}
+
+        {% if user.user_rating2.all|user_star:movie >= 3 %}
+            <span type="submit" class="fa fa-star fa-2x checked star-btn"></span>
+        {% else %}
+            <span type="submit" class="fa fa-star fa-2x star-btn"></span>
+        {% endif %}
+
+        {% if user.user_rating2.all|user_star:movie >= 4 %}
+            <span type="submit" class="fa fa-star fa-2x checked star-btn"></span>
+        {% else %}
+            <span type="submit" class="fa fa-star fa-2x star-btn"></span>
+        {% endif %}
+
+        {% if user.user_rating2.all|user_star:movie >= 5 %}
+            <span type="submit" class="fa fa-star fa-2x checked star-btn"></span>
+        {% else %}
+            <span type="submit" class="fa fa-star fa-2x star-btn"></span>
+        {% endif %}
+    </form>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+{% load static %}
+
+{% block statichead %}
+{% endblock statichead %}
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainMenu">
+      <span class="d-none d-sm-block">
+      <a class="navbar-brand navbar-left" href="{% url 'home' %}">
+        <img src="{% static 'movies/images/movie-it-logo.png' %}" width="80" height="80" alt="">
+      </a>
+      </span>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item navbar-home">
+          <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'movie_list' %}">Movies</a>
+        </li>
+      </ul>
+      <div class="navbar-nav mr-auto ml-auto">
+        <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="get">
+          <div class="p-1 bg-light rounded rounded-pill shadow-sm">
+            <div class="input-group">
+              <input name="q"
+                     type="search"
+                     placeholder="Search Movie"
+                     aria-describedby="button-addon1"
+                     class="form-control border-0 bg-light ml-sm-2 mt-sm-1 form-control-sm">
+              <div class="input-group-append">
+                <button id="button-addon1"
+                        type="submit"
+                        class="btn btn-link text-dark">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <ul class="navbar-nav ml-auto">
+        {% if user.is_authenticated %}
+        <li class="nav-item nav-sep">
+          <a class="nav-link" href="{% url 'recommendation' %}">Recommendation</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ user.email }}
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+            <a class="dropdown-item" href="{% url 'account' %}">My account</a>
+            <a class="dropdown-item" href="{% url 'user_stars_list' %}">My stars</a>
+            <a class="dropdown-item" href="{% url 'password_change' %}">Change password</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+          </div>
+        </li>
+        {% else %}
+        <li>
+          <a href="{% url 'login' %}" class="btn btn-light navbar-login-btn">Log in</a>
+        </li>
+        <li>
+           <a href="{% url 'signup' %}" class="btn btn-success ml-2 navbar-signup-btn">Sign up</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>

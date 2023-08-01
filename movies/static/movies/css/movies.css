@@ -1,0 +1,109 @@
+body,
+button,
+input,
+select,
+textarea {
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+.checked {
+  color: orange;
+}
+
+.rating{
+    user-select: none;
+}
+
+.star-btn {
+    background-color: inherit !important;
+    border: 0 !important;
+}
+
+a:link {
+  color: black;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+}
+
+/* mouse over link */
+a:hover {
+  color: #737373;
+}
+
+/* selected link */
+a:active {
+  color: black;
+}
+
+@media only screen and (min-width: 768px) {
+    .navbar-brand{
+        position: absolute;
+        top: 10px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .navbar-home{
+        margin-left:100px
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .nav-sep{
+        border-right: 1px solid rgba(255,255,255,.3);
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-signup-btn{
+        margin-left: 0 !important;
+        margin-top: 15px !important;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+}
+
+.navbar-signup-btn{
+    background-color: #7dc22b;
+    border-color: #7dc22b;
+}
+.navbar-signup-btn:hover {
+	background-color: transparent;
+	color: #7dc22b;
+	border-color: #7dc22b;
+	text-decoration: none;
+}
+
+.navbar-login-btn{
+    background-color: transparent;
+	border-color: #ffffff;
+	color: #ffffff !important;
+}
+
+.navbar-login-btn:hover {
+	background-color: #353a40;
+	color: #7dc22b !important;
+	border-color: #7dc22b;
+	text-decoration: none;
+}
+
+github-icon.{
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.form-control::placeholder {
+  font-size: 1rem;
+  color: #aaa;
+}
